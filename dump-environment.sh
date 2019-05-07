@@ -4,6 +4,9 @@ line="=================="
 sep="------------------"
 
 echo $line
+date
+
+echo $line
 echo PROG: "$0"
 echo ARGS
 for arg; do
@@ -30,6 +33,9 @@ while read before_sha after_sha ref; do
   echo $sep
   echo -n "$ref "; git rev-parse $ref
 done
+
+echo $line
+date
 
 echo $line
 exit 0
