@@ -1,10 +1,9 @@
 #!/bin/sh
-
-set -ex
+set -e
 
 BUF=$(cat)
-
 DIR=$(dirname $0)
+
 if echo $BUF | grep -q "test$"; then
   echo $BUF | ${DIR}/dump-environment.sh
 else
