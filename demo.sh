@@ -2,7 +2,7 @@
 
 set -ex
 
-BUF=$(</dev/stdin)
+BUF=$(cat)
 
 DIR=$(dirname $0)
 if echo $BUF | grep -q "debug$"; then
