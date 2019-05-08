@@ -1,9 +1,13 @@
 #!/bin/sh
 
-line="=================="
-
 # blank line
 echo
+
+line="=================="
+sep="------------------"
+
+echo $line
+date
 
 echo $line
 echo PROG: "$0"
@@ -26,8 +30,19 @@ ls -la
 
 echo $line
 echo STDIN
-cat
+while read before_sha after_sha ref; do
+  echo $line
+  echo $before_sha $after_sha $ref
+  echo $sep
+  git cat-file -p $before_sha; echo
+  echo $sep
+  git cat-file -p $after_sha; echo
+  echo $sep
+  echo -n "$ref "; git rev-parse $ref
+done
+
+echo $line
+date
 
 echo $line
 exit 0
-
