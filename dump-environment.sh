@@ -2,12 +2,19 @@
 
 line="=================="
 
+# blank line
+echo
+
 echo $line
 echo PROG: "$0"
 echo ARGS
 for arg; do
   echo "+ $arg"
 done
+
+echo $line
+echo PS
+ps -a
 
 echo $line
 echo ENV
